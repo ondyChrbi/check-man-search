@@ -1,0 +1,10 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/checkman
+    username: checkman
+    password: checkman
+    pool:
+      enabled: true
+
+server:
+  port: 9002
