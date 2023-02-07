@@ -4,10 +4,7 @@ import cz.upce.fei.checkmansearch.doc.FeedbackSearchEndpointV1
 import cz.upce.fei.checkmansearch.domain.Feedback
 import cz.upce.fei.checkmansearch.service.FeedbackServiceV1
 import io.swagger.v3.oas.annotations.tags.Tag
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import reactor.core.publisher.Flux
 
 @RestController
@@ -16,6 +13,7 @@ import reactor.core.publisher.Flux
 class FeedbackControllerV1(private val feedbackServiceV1: FeedbackServiceV1) {
     @GetMapping("")
     @FeedbackSearchEndpointV1
+    @CrossOrigin
     fun getAllFeedback(
         @RequestParam("description", required = false, defaultValue = "") description: String = "",
         @RequestParam("courseId", required = false) courseId: Long?,

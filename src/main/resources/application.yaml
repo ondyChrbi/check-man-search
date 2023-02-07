@@ -1,4 +1,8 @@
 spring:
+  security:
+    permit_paths: /**
+    cors:
+      enabled: false
   r2dbc:
     url: r2dbc:postgresql://localhost:5432/checkman
     username: checkman
@@ -8,6 +12,8 @@ spring:
 
 server:
   port: 9002
+  ssl:
+    enabled: false
 
 logging:
   level:
