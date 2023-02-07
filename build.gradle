@@ -21,6 +21,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
 	implementation 'io.projectreactor.kotlin:reactor-kotlin-extensions'
+	implementation 'org.springdoc:springdoc-openapi-webflux-ui:1.6.8'
+	implementation 'org.springdoc:springdoc-openapi-hateoas:1.6.8'
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.8'
 	implementation 'org.jetbrains.kotlin:kotlin-reflect'
 	implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
 	implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-reactor'
@@ -28,6 +31,7 @@ dependencies {
 	testImplementation 'io.projectreactor:reactor-test'
 	runtimeOnly 'org.postgresql:postgresql'
 	runtimeOnly 'org.postgresql:r2dbc-postgresql'
+	runtimeOnly 'org.springdoc:springdoc-openapi-kotlin:1.6.8'
 }
 
 tasks.withType(KotlinCompile) {
