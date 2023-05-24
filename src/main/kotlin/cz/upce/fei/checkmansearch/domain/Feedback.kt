@@ -6,12 +6,15 @@ import org.springframework.data.elasticsearch.annotations.Field
 
 @Document(indexName = "checkman")
 data class Feedback(
-    @field:Id  @field:Field(name = "id") var id: Long,
+    @field:Id  @field:Field(name = "feedback_id") var id: Long,
+    @field:Field(name = "course_id") var course_id: Long?,
     @field:Field(name = "description") var description: String,
-    @field:Field(name = "min_point") var minPoint: Int,
-    @field:Field(name = "max_point") var maxPoint: Int,
-    @field:Field(name = "removed") var removed: Boolean,
-    @field:Field(name = "name") var name: String,
-    @field:Field(name = "challenge_id") var challengeId: Long,
-    @field:Field(name = "active") var active: Boolean,
-)
+    @field:Field(name = "type") var type: FeedbackType,
+) {
+    enum class FeedbackType {
+        EXTREMELY_POSITIVE,
+        POSITIVE,
+        NEUTRAL,
+        NEGATIVE
+    }
+}
